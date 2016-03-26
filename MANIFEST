@@ -1,0 +1,14 @@
+Changes
+inc/Devel/CheckLib.pm
+LICENSE
+Makefile.PL
+MANIFEST			This list of files
+MANIFEST.SKIP
+src/util.c
+src/util.h
+t/00-load.t
+Threaded.pm
+Threaded.xs
+xt/91-pod-syntax.t
+xt/92-critic.t
+xt/93-changes.t

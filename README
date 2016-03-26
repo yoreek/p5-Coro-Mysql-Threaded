@@ -1,0 +1,32 @@
+NAME
+    Coro::Mysql::Threaded - Asynchronous MySQL queries on real threads
+
+SYNOPSIS
+        use DBI;
+        use EV;
+        use Coro;
+        use Coro::Mysql::Threaded;
+
+        async {
+            my $dbh = DBI->connect('DBI:mysql:test', '', '')
+                or die $DBI::errstr;
+
+            my $sth = $dbh->prepare('SELECT * FROM users');
+            $sth->execute();
+            my $res = $sth->fetchall_arrayref({});
+        } for 1..10
+
+        EV::loop;
+
+DESCRIPTION
+    This module is experimental!
+
+AUTHOR
+    Yuriy Ustushenko, <yoreek@yahoo.com>
+
+COPYRIGHT AND LICENSE
+    Copyright (C) 2016 Yuriy Ustushenko
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
